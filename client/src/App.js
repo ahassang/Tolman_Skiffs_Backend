@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Router } from '@reach/router';
+import NewSkiff from './components/NewSkiff';
+import AllSkiffs from './components/AllSkiffs';
+import OneSkiff from './components/OneSkiff';
+import EditSkiff from './components/EditSkiff';
+
 
 function App() {
+  const NotFound = () => {
+    return (
+      <div>Route not Found</div>
+
+    )
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <AllSkiffs path="/skiff" />
+        <NewSkiff path="/skiff/new" />
+        <OneSkiff path="/skiff/:id" />
+        <EditSkiff path="/skiff/:skiffId/edit" />
+        <NotFound default />
+      </Router>
     </div>
   );
 }

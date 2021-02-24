@@ -3,6 +3,7 @@ const TolmanSkiff = require('../models/skiffs.model');
 module.exports = {
     getAll: (req, res) => {
         TolmanSkiff.find()
+            .sort({ ownerName: "descending" })
             .then((allSkiffs) => {
                 console.log(allSkiffs);
                 res.json(allSkiffs);

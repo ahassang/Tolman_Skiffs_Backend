@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.error-text {
+  color: red;
+  margin-left: 10px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +40,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* to help troubleshoot, I created this class to i can easilt ass and remove it */
+.debug {
+  border: 1px solid red;
 }

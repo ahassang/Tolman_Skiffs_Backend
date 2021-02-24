@@ -10,3 +10,5 @@ module.exports = (app) => {
     app.put('/api/skiffs/:id', SkiffsController.update);
     app.delete('/api/skiffs/:id', SkiffsController.delete);
 }
+
+
